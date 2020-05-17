@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.dialog {
+	overflow: hidden;
+}
+
+body {
+  display: none;
+  overflow: hidden;
+  background: #7800ff;
+  font-family: 'Roboto', sans-serif;
+}
+body fieldset {
+  box-shadow: 0 8px 10px #5c02c2;
+}
+
+body.error {
+  background: #f04000;
+}
+body.error fieldset {
+  box-shadow: 0 8px 10px #bd3200;
+}
+
+h1, h2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1 {
+  top: 24px;
+  color: white;
+  font-size: 12px;
+}
+
+h2 {
+  top: 44px;
+  color: white;
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+ul.items {
+  position: absolute;
+  width: 30px;
+  height: auto;
+  top: 50%;
+  left: -60px;
+  transform: translateY(-50%);
+}
+ul.items li {
+  width: 8px;
+  height: 8px;
+  margin: 10px 0;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.4;
+  cursor: pointer;
+}
+ul.items li.active {
+  opacity: 1;
+}
+
+form {
+  position: absolute;
+  width: 300px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+form fieldset {
+  position: absolute;
+  width: 300px;
+  height: 60px;
+  background: white;
+  border-radius: 3px;
+  opacity: 0;
+  transform: scale(0.2);
+  transition: all 0.4s ease-in-out;
+}
+form fieldset input, form fieldset p {
+  display: inline-block;
+  width: 200px;
+  margin-left: 50px;
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+form fieldset p {
+  margin-top: 22px;
+  text-align: center;
+}
+form fieldset input {
+  height: 40px;
+  margin-top: 8px;
+  border: none;
+  outline: none;
+}
+form fieldset .icon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  transition: all 0.4s ease;
+}
+form fieldset .icon i {
+  position: absolute;
+  display: block;
+}
+form fieldset .icon i::before, form fieldset .icon i::after {
+  position: absolute;
+  content: "";
+}
+form fieldset .icon.left {
+  left: 10px;
+}
+form fieldset .icon.right {
+  right: 10px;
+  cursor: pointer;
+}
+form fieldset .icon.button:hover {
+  background: #f2f2f2;
+  border-radius: 3px;
+  transition: all 0.4s ease;
+}
+form fieldset.enable {
+  z-index: 1;
+  opacity: 1;
+  transition: all 0.5s ease-out 0.2s;
+  transform: scale(1);
+  animation: enable 0.5s ease-out 0.2s;
+}
+form fieldset.disable {
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  transform: translateY(120px) scale(0.9);
+}
+
+body.error fieldset {
+  transform-origin: 50% 100%;
+  animation: error 0.3s ease-out;
+}
+
+@keyframes enable {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes error {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+/**
+ * Icons in CSS, long as f****
+ */
+.icon .arrow {
+  width: 2px;
+  height: 17px;
+  top: 5px;
+  left: 14px;
+  background: #333333;
+}
+.icon .arrow::before {
+  width: 6px;
+  height: 6px;
+  bottom: -1px;
+  left: -3px;
+  border-color: #333333;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(45deg);
+}
+
+.icon .user {
+  width: 20px;
+  height: 10px;
+  bottom: 5px;
+  left: 5px;
+  box-shadow: 0 0 0 2px #333333 inset;
+  border-radius: 6px 6px 3px 3px;
+}
+.icon .user::before {
+  width: 10px;
+  height: 10px;
+  top: -9px;
+  left: 5px;
+  box-shadow: 0 0 0 2px #333333 inset;
+  border-radius: 50%;
+}
+
+.icon .letter {
+  width: 20px;
+  height: 12px;
+  top: 9px;
+  left: 5px;
+  box-shadow: 0 0 0 2px #333333 inset;
+  border-radius: 3px;
+}
+.icon .letter::before, .icon .letter::after {
+  width: 11px;
+  height: 2px;
+  top: 4px;
+  background: #333333;
+}
+.icon .letter::before {
+  left: 0;
+  transform: rotate(30deg);
+}
+.icon .letter::after {
+  right: 0;
+  transform: rotate(-30deg);
+}
+
+.icon .lock {
+  width: 20px;
+  height: 16px;
+  top: 9px;
+  left: 5px;
+  box-shadow: 0 0 0 2px #333333 inset;
+  border-radius: 3px;
+}
+.icon .lock::before {
+  width: 8px;
+  height: 8px;
+  top: -4px;
+  left: 4px;
+  border: 2px solid transparent;
+  border-top: 2px solid #333333;
+  border-right: 2px solid #333333;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+}
+.icon .lock::after {
+  width: 6px;
+  height: 7px;
+  top: 4px;
+  left: 7px;
+  box-shadow: 0 0 0 2px #333333 inset;
+}
+
+.icon .heart {
+  width: 10px;
+  height: 10px;
+  top: 11px;
+  left: 7px;
+  background: #ff5233;
+  transform: rotate(45deg);
+}
+.icon .heart::before, .icon .heart::after {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff5233;
+}
+.icon .heart::before {
+  left: -6px;
+}
+.icon .heart::after {
+  top: -6px;
+}
+
+button#submit{
+  color: black;
+  background-color: white;
+  font-size: large;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  border-style: none;
+  text-align: center;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 300px;
+  height: 60px;
+  transition: background-color 0.5s ease;
+
+}
+
+button#submit:hover{
+  transition: background-color 0.5s ease;
+  background-color: #6606d4; 
+  color: white;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 20px;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+input#male{
+  height: 2px;
+}
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@keyframes ripple {
+  0% {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+  }
+  50% {
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);
+  }
+}
+.md-radio {
+  margin: 16px 0;
+}
+.md-radio.md-radio-inline {
+  display: inline-block;
+}
+.md-radio input[type="radio"] {
+  display: none;
+}
+.md-radio input[type="radio"]:checked + label:before {
+  border-color: #7800ff;
+  animation: ripple 0.2s linear forwards;
+}
+.md-radio input[type="radio"]:checked + label:after {
+  transform: scale(1);
+}
+.md-radio label {
+  min-height: 20px;
+  position: relative;
+  padding: 4px 30px;
+  left:50px;
+  top: 8px;
+  color:#333333;
+}
+.md-radio label:before, .md-radio label:after {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  transition: all .3s ease;
+  transition-property: transform, border-color;
+}
+.md-radio label:before {
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.54);
+}
+.md-radio label:after {
+  top: 5px;
+  left: 5px;
+  width: 14px;
+  height: 14px;
+  transform: scale(0);
+  background: #7800ff;
+}
+
+img#logogo{
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-top: 15%;
+}
+
+div#creazione{
+  text-align: center;
+  color: white;
+  padding-top: 35%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
