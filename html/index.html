@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Register Form | lilwesyy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script type="text/javascript">
+
+function stopRKey(evt) {
+  var evt = (evt) ? evt : ((event) ? event : null);
+  var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+  if ((evt.keyCode == 13) && (node.type=="text"))  {return false;}
+}
+
+document.onkeypress = stopRKey;
+
+</script>
+</head>
+<body>
+
+<h1>N A M E O F Y O U R S E R V E R</h1>
+
+<div id="creazione">
+  <h2>Character Creation</h2><br>
+  <p>Fill the fields correctly, you don't have any change to change after</p>
+</div>
+
+
+  <div class="dialog">
+  <form id="register">
+    <ul class="items"></ul>
+
+    <fieldset class="username enable">
+      <input type="text" name="username" style = "text-transform:capitalize;" id="firstname" placeholder="Firt Name"/>
+      <div class="icon right button"><i class="arrow"></i></div>
+    </fieldset>
+    
+    <fieldset class="cognome">
+      <input type="text" name="cognome" style = "text-transform:capitalize;" id="lastname" placeholder="Last Name"/>
+      <div class="icon right button"><i class="arrow"></i></div>
+    </fieldset>
+
+    <fieldset class="datanascita">
+      <input type="text" name="nascita" id="dateofbirth" placeholder="MM/DD/AAAA"/>
+      <div class="icon right button"><i class="arrow"></i></div>
+    </fieldset>
+
+    <fieldset class="altezza">
+      <input type="number" name="altezza" id="height" min="120" max="200" placeholder="Height"/>
+      <div class="icon right button"><i class="arrow"></i></div>
+    </fieldset>
+
+    <fieldset class="genere">
+      <div class="md-radio md-radio-inline">
+        <input id="3" type="radio" value="m" name="sex" checked>
+        <label for="3">Man</label>
+      </div>
+      <div class="md-radio md-radio-inline">
+        <input id="4" type="radio" value="f" name="sex">
+        <label for="4">Woman</label>
+      </div>
+      <div class="icon right button"><i class="arrow"></i></div>
+    </fieldset>
+
+    <fieldset class="thanks">
+      <button id="submit" type="submit">CREATE</button>
+    </fieldset>
+  </form>
+</div>
+
+
+
+<div class="footer">
+  <p>💜 2020 lilwesyy. All Rights Reserved</p>
+</div>
+  <script  src="scriptb.js"></script>
+  <script src="script.js" type="text/javascript"></script>
+</body>
+</html>
