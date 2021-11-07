@@ -1,4 +1,4 @@
-Locales['en'] = {
+Locales['sv'] = {
   ['show_registration'] = 'visa registreringsmenyn',
   ['show_active_character'] = 'visa aktiv karaktär',
   ['delete_character'] = 'ta bort din karaktär och skapa en ny',
